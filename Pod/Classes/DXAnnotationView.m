@@ -33,6 +33,9 @@
         [self validateSettings:settings];
         _hasCalloutView = (calloutView) ? YES : NO;
         self.canShowCallout = NO;
+        
+        if (self.pinView != nil) { [self.pinView removeFromSuperview]; }
+        if (self.calloutView != nil) { [self.calloutView removeFromSuperview]; }
 
         self.pinView = pinView;
         self.pinView.userInteractionEnabled = YES;
